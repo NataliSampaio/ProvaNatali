@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<style>
+    img#lampada{
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+</style>
+
+<body>
+    <p>Crie uma página HTML com a imagem de uma lâmpada desligada, centralizada na página. Ao
+        posicionar o ponteiro do mouse sobre a lâmpada (evento "onmouseover"), a lâmpada deverá ser
+        ligada. Ao retirar o ponteiro do mouse da lâmpada (evento "onmouseleave"), a lâmpada deverá ser
+        desligada. Um duplo clique sobre a lâmpada (evento "ondblclick") deverá quebrar a mesma, que não
+        poderá mais ser ligada.</p>
+
+    
+        
+    <IMG id="lampada" src="/lampada_desligada.jpeg" alt="lampada desligada">
+        
+    <script>
+        var element = document.getElementById('lampada');
+
+        element.onmouseover = function lampada() {
+
+
+            console.log(element.src)
+            if (element.src.includes("desligada.jpeg")) {
+                element.src = "/lampada_ligada.jpeg";
+
+
+            }
+        }
+
+        element.onmouseleave = function lampada() {
+            if (element.src.includes("ligada.jpeg")) {
+                element.src = "/lampada_desligada.jpeg";
+            }
+        }
+        element.ondblclick = function lampada() {
+            if (element.src.includes("ligada.jpeg")) {
+                element.src = "/lampada_quebrada.jpeg";
+
+
+            }
+
+
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
